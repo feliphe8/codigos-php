@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function getPHP(){
+	var xmlhttp = new XMLHttpRequest();
+	var url = "model.php";
+
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	        var js = JSON.parse(xmlhttp.responseText);
+	        showObj(js);
+	    }
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();	
+}
+
+function showObj(obj){
+	var aux = "<ul><li>";
+	aux = aux + obj["nome"] + "</li>";
+	var alunos = obj["alunos"];
+	for(var i in alunos){
+		aux = aux + "<li>" + alunos[i].nome + "</li>"
+	}
+	aux = aux + "</ul>"
+	document.write(aux);
+}
+</script>
+</head>
+<body>
+<button onclick="getPHP()">GO!</button>
+</body>
+</html>

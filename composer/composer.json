@@ -1,0 +1,15 @@
+{
+    "name": "feliphe8/composer",
+    "description": "Testando o composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Feliphe Simões Carvalho",
+            "email": "fsc_nfsu@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "monolog/monolog":"1.0.*"
+    }
+}
